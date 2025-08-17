@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Upload & Preview – Memories</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="/"><img src="/assets/img/logo.png"><span>MEMORIES</span></a>
+<nav><a href="/shop/">Shop</a><a href="/quiz/">AI Gift Finder</a></nav>
+</div></header>
+
+<main class="container">
+  <h1>Upload & Preview</h1>
+  <div class="customizer-grid">
+    <div>
+      <div class="preview-wrap">
+        <canvas id="preview" width="600" height="450" aria-label="Frame preview"></canvas>
+      </div>
+      <div class="controls">
+        <label>Upload photo <input type="file" id="file" accept="image/*"></label>
+        <label>Zoom <input type="range" id="zoom" min="1" max="3" step="0.01" value="1"></label>
+        <label>Move X <input type="range" id="moveX" min="-300" max="300" value="0"></label>
+        <label>Move Y <input type="range" id="moveY" min="-300" max="300" value="0"></label>
+        <label>Wall color <input type="color" id="wall" value="#f3f4f6"></label>
+      </div>
+    </div>
+    <aside>
+      <h3>Frame</h3>
+      <select id="frame">
+        <option value="classic">Classic Wood</option>
+        <option value="black">Matte Black</option>
+        <option value="acrylic">Acrylic</option>
+      </select>
+      <h3>Size</h3>
+      <select id="size">
+        <option>8x10in</option><option selected>10x12in</option><option>12x18in</option>
+      </select>
+      <a class="btn btn-primary mt" id="orderBtn" href="/contact/?intent=upload">Continue to Upload Form</a>
+      <p class="hint">This is a visual preview. Final print is prepared by our studio.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="sub">© <span id="yr"></span> Memories</div></footer>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/customizer.js"></script>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Gift Finder – Memories</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="/"><img src="/assets/img/logo.png"><span>MEMORIES</span></a>
+<nav><a href="/shop/">Shop</a><a href="/customizer/">Upload & Preview</a></nav>
+</div></header>
+
+<main class="container narrow">
+  <h1>AI Gift Finder</h1>
+  <form id="quizForm" class="quiz">
+    <label>Recipient
+      <select name="recipient"><option>Partner</option><option>Mom</option><option>Dad</option><option>Friend</option><option>Colleague</option></select>
+    </label>
+    <label>Occasion
+      <select name="occasion"><option>Birthday</option><option>Anniversary</option><option>Wedding</option><option>Housewarming</option></select>
+    </label>
+    <label>Budget
+      <select name="budget"><option>Under ₹1000</option><option>₹1000–2000</option><option>₹2000–4000</option><option>₹4000+</option></select>
+    </label>
+    <label>Delivery urgency
+      <select name="urgency"><option>Standard</option><option>Express</option></select>
+    </label>
+    <button class="btn btn-primary" type="submit">Show suggestions</button>
+  </form>
+
+  <div id="results" class="cards mt"></div>
+</main>
+
+<footer class="site-footer"><div class="sub">© <span id="yr"></span> Memories</div></footer>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/quiz.js"></script>
+</body></html>

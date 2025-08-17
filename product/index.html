@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product – Memories</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="/"><img src="/assets/img/logo.png"><span>MEMORIES</span></a>
+<nav><a href="/shop/">Shop</a><a href="/customizer/">Upload & Preview</a><a href="/quiz/">AI Gift Finder</a></nav>
+</div></header>
+
+<main class="container" id="pdp">
+  <div class="pdp-grid">
+    <div class="pdp-media placeholder"></div>
+    <div>
+      <h1 id="pName">Product</h1>
+      <p id="pDesc"></p>
+      <div class="price" id="pPrice">₹—</div>
+      <label>Size
+        <select id="pSize">
+          <option>8x10in</option><option selected>10x12in</option><option>12x18in</option>
+        </select>
+      </label>
+      <label>Material
+        <select id="pMat">
+          <option>Wood</option><option>Acrylic</option>
+        </select>
+      </label>
+      <div class="row mt">
+        <a class="btn" id="previewBtn">Preview with my photo</a>
+        <a class="btn btn-primary" id="buyBtn" href="/contact/?intent=order">Request to Order</a>
+      </div>
+      <ul class="bullets">
+        <li>Gift wrap available</li>
+        <li>Coimbatore pickup & delivery</li>
+        <li>Quality guarantee</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="sub">© <span id="yr"></span> Memories</div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const sku = params.get('sku') || 'classic-wood-10x12';
+const products = {
+  'classic-wood-10x12': {name:'Classic Wood Frame',desc:'Walnut finish with glass.',price:'₹1,299',template:'classic-wood-10x12'},
+  'acrylic-led-8x10': {name:'Acrylic LED Frame',desc:'Edge-lit acrylic with warm glow.',price:'₹1,899',template:'acrylic-led-8x10'}
+};
+const p = products[sku];
+document.getElementById('pName').textContent = p.name;
+document.getElementById('pDesc').textContent = p.desc;
+document.getElementById('pPrice').textContent = p.price;
+document.getElementById('previewBtn').href = `/customizer/?template=${encodeURIComponent(p.template)}`;
+document.getElementById('buyBtn').href = `/contact/?intent=order&sku=${encodeURIComponent(sku)}`;
+</script>
+</body></html>
