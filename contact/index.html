@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>Contact & Upload – Memories</title> <meta name="description" content="Contact MEMORIES for store pickup, local delivery, and photo uploads for personalized frames and gifts."> <link rel="stylesheet" href="/assets/css/styles.css"> <link rel="icon" href="/assets/img/logo.png"> <!-- LocalBusiness schema (update URL and address when ready) --> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Store", "name": "MEMORIES", "image": "/assets/img/logo.png", "description": "Custom photo frames and personalized gifts. Upload, preview, and gift with confidence.", "telephone": "+91 8148040148", "url": "https://YOUR-NETLIFY-SITENAME.netlify.app", "address": { "@type": "PostalAddress", "streetAddress": "Your store address", "addressLocality": "Coimbatore", "addressRegion": "TN", "postalCode": "641XXX", "addressCountry": "IN" }, "areaServed": "Coimbatore", "openingHoursSpecification": [ { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "20:00" } ] } </script></head> <body> <header class="site-header"> <div class="container nav"> <a class="brand" href="/"><img src="/assets/img/logo.png" alt="Memories logo"><span>MEMORIES</span></a> <nav> <a href="/shop/">Shop</a> <a href="/customizer/">Upload & Preview</a> <a href="/quiz/">AI Gift Finder</a> </nav> </div> </header> <main class="container narrow"> <h1>Contact & Upload</h1>
+<!-- Store info block: update address/hours when available -->
+<section class="card" style="margin-bottom:16px;padding:16px;">
+  <h2>Store pickup & contact</h2>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/918148040148" target="_blank" rel="noopener">+91 8148040148</a></p>
+  <p><strong>Address:</strong> Your store address, Coimbatore, TN 641XXX</p>
+  <p><strong>Pickup hours:</strong> Mon–Sat, 10:00–20:00</p>
+  <p><strong>Email:</strong> yourname@example.com</p>
+</section>
+
+<!-- Optional: simple map placeholder. Replace the src with your place link later -->
+<section class="card" style="margin-bottom:16px;padding:0;overflow:hidden;">
+  <iframe
+    src="https://www.google.com/maps?q=Coimbatore&output=embed"
+    width="100%" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Map - Coimbatore">
+  </iframe>
+</section>
+
+<!-- Netlify-ready form: appears under Netlify Forms after first submission -->
+<form class="card" name="upload" method="post" data-netlify="true" enctype="multipart/form-data" style="padding:16px;">
+  <input type="hidden" name="form-name" value="upload">
+  <h2>Send your order details & photos</h2>
+  <label>Name
+    <input required name="name" autocomplete="name">
+  </label>
+  <label>Phone
+    <input required name="phone" autocomplete="tel">
+  </label>
+  <label>Email
+    <input type="email" name="email" autocomplete="email">
+  </label>
+  <label>Order/Intent
+    <input name="intent" value="">
+  </label>
+  <label>Product SKU
+    <input name="sku" value="">
+  </label>
+  <label>Notes
+    <textarea name="notes" rows="4" placeholder="Any personalization, gift message, delivery notes"></textarea>
+  </label>
+  <label>Upload photo(s)
+    <input type="file" name="files" multiple accept="image/*">
+  </label>
+  <button class="btn btn-primary" type="submit">Send</button>
+  <p class="hint" style="color:#6b7280;margin-top:8px;">We’ll confirm details on WhatsApp and prepare the artwork for print.</p>
+</form>
+</main> <footer class="site-footer"> <div class="sub">© <span id="yr"></span> Memories</div> </footer> <!-- Floating WhatsApp button -->
+<a class="whatsapp" target="_blank" id="waBtn" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<script src="/assets/js/main.js"></script> <script> // Prefill fields from URL parameters const q = new URLSearchParams(location.search); const intent = q.get('intent') || ''; const sku = q.get('sku') || ''; const intentEl = document.querySelector('[name="intent"]'); const skuEl = document.querySelector('[name="sku"]'); if (intentEl) intentEl.value = intent; if (skuEl) skuEl.value = sku; </script> </body> </html>
